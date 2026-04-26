@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id "org.gradle.toolchains.foojay-resolver-convention" version "1.0.0"
+}
+
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+        maven {
+            name = "PaperMC"
+            url = "https://repo.papermc.io/repository/maven-public/"
+        }
+        mavenCentral()
+    }
+}
+
+rootProject.name = "minecraft-mod-mob-bossbar"
+include "fabric", "paper"

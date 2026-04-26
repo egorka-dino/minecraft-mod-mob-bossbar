@@ -1,0 +1,25 @@
+base {
+    archivesName = "${rootProject.archives_base_name}-paper"
+}
+
+def modVersion = project.version
+def licenseFile = rootProject.file("LICENSE")
+def archiveBaseName = project.base.archivesName.get()
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:${rootProject.paper_api_version}"
+}
+
+processResources {
+    inputs.property "version", modVersion
+
+    filesMatching("paper-plugin.yml") {
+        expand "version": modVersion
+    }
+}
+
+jar {
+    from(licenseFile) {
+        rename { "${it}_${archiveBaseName}" }
+    }
+}

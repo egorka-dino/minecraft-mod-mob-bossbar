@@ -1,0 +1,26 @@
+plugins {
+    id "fabric-loom" version "1.14-SNAPSHOT" apply false
+    id "base"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+subprojects {
+    apply plugin: "java"
+
+    version = rootProject.version
+    group = rootProject.group
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+
+        withSourcesJar()
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release = 21
+    }
+}

@@ -1,0 +1,6 @@
+name: MobBossbar
+version: ${version}
+main: com.egorka_dino.mobbossbar.paper.MobBossbarPaperPlugin
+description: Shows a vanilla boss bar for living entities with the scoreboard tag 'boss'.
+author: egorka_dino
+api-version: '1.21.11'
