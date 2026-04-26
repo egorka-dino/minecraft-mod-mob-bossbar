@@ -37,3 +37,12 @@ Built jars:
 
 - `fabric/build/libs/mob-bossbar-fabric-1.0.0.jar`
 - `paper/build/libs/mob-bossbar-paper-1.0.0.jar`
+
+## Release
+
+Create and push a version tag to publish a GitHub Release with both binaries attached:
+
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
